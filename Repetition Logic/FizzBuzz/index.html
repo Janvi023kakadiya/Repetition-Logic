@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h1>FizzBuzz</h1>
+
+    <script>
+        let num = 1;
+
+        do {
+            if (num % 3 === 0 && num % 5 === 0) {
+                console.log("FizzBuzz");
+                document.write("<p>FizzBuzz</p>");
+            } else if (num % 3 === 0) {
+                console.log("Fizz");
+                document.write("<p>Fizz</p>");
+            } else if (num % 5 === 0) {
+                console.log("Buzz");
+                document.write("<p>Buzz</p>");
+            } else {
+                console.log(num);
+                document.write("<p>" + num + "</p>");
+            }
+
+            num++;
+        } while (num <= 100);
+    </script>
+</body>
+</html>

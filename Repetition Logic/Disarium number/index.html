@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disarium </title>
+</head>
+
+<body>
+    <h1>Disarium Number</h1>
+    <p id="disarium-numbers"></p>
+
+    <script>
+        let givenNumber = 500;
+        let disariumNumbers = [];
+
+        for (let i = 1; i <= givenNumber; i++) {
+            let num = i;
+            let sum = 0;
+            let numberOfDigits = num.toString().length;
+            let temp = num;
+            let position = numberOfDigits;
+
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += Math.pow(digit, position);
+                temp = Math.floor(temp / 10);
+                position--;
+            }
+
+            if (sum === i) {
+                disariumNumbers.push(i);
+            }
+        }
+
+        document.getElementById("disarium-numbers").innerHTML = "Disarium numbers up to " + givenNumber + "= " + disariumNumbers.join(", ");
+
+    </script>
+</body>
+
+</html>
